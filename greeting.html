@@ -17,30 +17,35 @@
          render() {
            return (
              <div>
-               <h1>Hello {this.props.name}!</h1>
+              <h1>Greetings {this.props.name}!</h1>
              </div>
            );
          }
        }
-
        ReactDOM.render(
          <Greeting name = "Jordan" />, document.getElementById('app')
        );
-       </script>
+    </script>
 
-       <script type="text/babel">
-          class Goodbye extends React.Component {
-            render() {
-              return (
-                <div>
-                  <h1>Goodbye World!</h1>
-                </div>
-              );
-            }
+    <script type="text/babel">
+
+        class Farewell extends React.Component {
+          constructor(props) {
+            super(props)
+            this.state = {color : "blue"}
           }
+          render() {
+            return (
+              <div>
+                <h1>Current color value: {this.state.color}</h1>
+                <h1>Farewell {this.props.name}!</h1>
+              </div>
+            );
+          }
+        };
 
           ReactDOM.render(
-            <Goodbye />, document.getElementById('top')
+            <Farewell name = "Jordan"/>, document.getElementById('top')
           );
        </script>
 
